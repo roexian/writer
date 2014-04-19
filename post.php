@@ -1,12 +1,14 @@
 <?php
 
+include 'config.inc.php';
+
 $title = $_POST["title"];
 $story = $_POST["story"];
 
 //echo $title;
 //echo $story;
 
-$db = new PDO('mysql:host=localhost;port=8889;dbname=dingus', 'writey', 'Iw2wad4m');
+$db = new PDO("mysql:host=".$dbhost.";port=".$dbport.";dbname=".$dbName, $dbUser, $dbPass);
 $stmt = $db->prepare("INSERT INTO blog1(postTitle,postStory) VALUES(:title,:story)");
 $stmt->execute(array(':title' => $title,':story' => $story));
 

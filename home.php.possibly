@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<span style="font-style: italic; font-size: 10pt">All fields are required.</span></div><p />
+		<form action="post.php" method="post">
+			<div>
+				<label>Title:&nbsp;</label><input style="width: 200px" name="title" value="title"/>
+				<p />
+				<label>What do you wanna write about:<br /><textarea cols="100" rows="20" name="story"></textarea>
+			</div>
+			<input type="submit" name="submit" value="Post">
+			
+		</form>
+	</body>
+</html>
