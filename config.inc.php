@@ -14,7 +14,6 @@
 
 //$database -> 
 $dbHost = "localhost"; // Host name
-//$database -> 
 $dbPort = "8899"; // Port number. Leave blank for default
 $dbName = "dingus"; // Database name
 $dbUser = "writey"; // Username

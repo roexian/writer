@@ -8,11 +8,13 @@ $story = $_POST["story"];
 //echo $title;
 //echo $story;
 
-$db = new PDO("mysql:host=".$dbhost.";port=".$dbport.";dbname=".$dbName, $dbUser, $dbPass);
-$stmt = $db->prepare("INSERT INTO blog1(postTitle,postStory) VALUES(:title,:story)");
-$stmt->execute(array(':title' => $title,':story' => $story));
+$db = new PDO("mysql:host=".$dbHost.";port=".$dbPort.";dbname=".$dbName, $dbUser, $dbPass);
+$stmt = $db->prepare("INSERT INTO blog1 (postTitle, postStory) VALUES (:title, :story)");
+$stmt = bindParam(":title", $title);
+$stmt = bindParam(":story", $story);
+$stmt->execute();
 
-header('location: viewpage.php');
+header("location: viewpage.php");
 exit;
 //$sql = "INSERT INTO blog1 (postTitle,postStory) VALUES ($title, $story)";
 //$q = $db->exec($sql);

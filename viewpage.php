@@ -3,7 +3,9 @@
 <body>
 	<div style="word-wrap:normal">
 <?php
-$dbh = new PDO('mysql:host=localhost;port=8889;dbname=dingus', 'writey', 'Iw2wad4m');
+include 'config.inc.php';
+//$dbh = new PDO('mysql:host=localhost;port=8889;dbname=dingus', 'writey', 'Iw2wad4m');
+$dbh = new PDO("mysql:host=".$dbHost.";port=".$dbPort.";dbname=".$dbName, $dbUser, $dbPass);
 //foreach($db->query('SELECT * FROM blog1') as $row)
 try {
 
